@@ -1,0 +1,2 @@
+module PaperSubmissionsHelper
+end

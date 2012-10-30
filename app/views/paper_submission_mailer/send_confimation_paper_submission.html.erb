@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>VIII Congresso FAESF</h1>
+			<h2>Desenvolvimento Regional:</h2>
+			<h3>Sustentabilidade e Inclusão Social</h3>
+			<h3>21 a 23 de Novembro de 2012</h3>
+		</div>
+		<div class="row">
+			<h2>Confirmação de Submissão de Resumo</h2>
+			<p>
+				Para acompanhar o andamento da avaliação 
+				<%= link_to "Clique aqui", "localhost:3000/paper_submissions?token=#{@paper_submission.token}" %>.
+				Caso o link esteja desabilitado, coloque no seu navegador favorito o seguinte endereço: <%= "http://localhost:3000/paper_submissions?token=#{@paper_submission.token}" %>
+			</p>
+		</div>
+	</div>
+  </body>
+</html>
+

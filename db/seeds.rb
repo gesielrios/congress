@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Status.create(:description => "Em analise")
+Status.create(:description => "Aceito")
+Status.create(:description => "Recusado")

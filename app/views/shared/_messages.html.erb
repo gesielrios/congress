@@ -1,0 +1,22 @@
+<% [:error, :warning, :notice, :info].each {|type| unless flash[type].blank? %>
+	<% css_class = String.new 
+	 case type 
+		 when :error 
+			css_class = "alert alert-error" 
+		 when :warning 
+			css_class = "alert alert-block" 
+		 when :notice 
+			css_class = "alert alert-success" 
+		 when :info 
+			css_class = "alert alert-info"
+	 end %>
+	<div class="<%= css_class %>">
+		<% unless flash[type].blank? %>
+			<button class="close" data-dismiss="alert" type="button">×</button>
+			<strong><%= t type %></strong><%= "#{flash[type]}".html_safe %>
+		<% end %>
+    </div>
+    <% flash[type] = ""
+  end
+} %>
+
