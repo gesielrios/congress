@@ -3,6 +3,5 @@
 Site do Congresso da Faculdade de Educação São Francisco.
 
 Desenvolvida por:
-
 Gesiel Rios
 @gesielrios
