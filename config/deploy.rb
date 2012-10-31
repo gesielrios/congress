@@ -15,12 +15,6 @@ set :deploy_via, :copy
 set :shared_directory, "#{deploy_to}/shared"
 set :use_sudo, false
 
-namespace :deploy do
-  task :restart, :except=>{:no_release => true} do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
-
 namespace :uploader do
   task :symlink do
     run <<-CMD
