@@ -4,4 +4,6 @@ class Contact < ActiveRecord::Base
   validates_presence_of :email, :menssage, :name, :subject
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   
+  self.per_page = 20
+  
 end

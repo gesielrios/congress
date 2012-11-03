@@ -1,0 +1,24 @@
+<%- model_class = PaperSubmission -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => model_class.model_name.human %></h2>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @paper_submission.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @paper_submission.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @paper_submission.email %></dd>
+  <% if @paper_submission.status %>
+  	<dt><strong>Status:</strong></dt>
+	<dd><%= @paper_submission.status.description %></dd>
+  <% end %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Voltar",
+              admin_paper_submissions_path, :class => 'btn'  %>
+  <%= link_to "Editar",
+	          edit_admin_paper_submission_path(@paper_submission), :class => 'btn btn-primary' %>
+</div>

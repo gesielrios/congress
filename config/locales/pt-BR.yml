@@ -209,13 +209,15 @@ pt-BR:
     models:
       contact: Contato
       paper_submission: Submissão de Resumos
+      user: "Usuário"
     
     attributes:
       contact:
         name: "Nome"
         email: "Email"
         subject: "Assunto"
-        menssage: "Menssagem"
+        menssage: "Mensagem"
+        created_at: "Criado em"
       paper_submission:
         name: "Autor Principal"
         email: "Email Autor Principal"
@@ -228,7 +230,12 @@ pt-BR:
   notice: "Muito Bem. "
   error: "Error: "
   warning: "Atenção! "
+  alert: "Atenção! "
   info: "Informação: "
+  will_paginate:
+      previous_label: "&#8592; Anterior"
+      next_label: "Próximo &#8594;"
+      page_gap: "&hellip;"
 
   
   

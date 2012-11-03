@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h2>Contatos</h2>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th width="25%">Nome</th>
+      <th width="25%">Email</th>
+      <th>Assunto</th>
+      <th>Criado em</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.name, admin_contact_path(contact) %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.subject %></td>
+        <td><%=l contact.created_at, :format => "%d/%m/%Y" %></td>
+        <td>
+          <%= link_to "Visualizar",
+                      admin_contact_path(contact), :class => 'btn btn-mini btn-primary' %>
+          <%= link_to "Apagar",
+                      admin_contact_path(contact),
+                      :method => :delete,
+                      :data => { :confirm => 'Deseja realmente apagar ?'},
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @contacts, :renderer => BootstrapPagination::Rails %>
+
+

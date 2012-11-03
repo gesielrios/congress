@@ -1,14 +1,16 @@
-<% [:error, :warning, :notice, :info].each {|type| unless flash[type].blank? %>
+<% [:error, :warning, :notice, :info, :alert].each {|type| unless flash[type].blank? %>
 	<% css_class = String.new 
 	 case type 
-		 when :error 
+		when :error 
 			css_class = "alert alert-error" 
-		 when :warning 
+		when :warning 
 			css_class = "alert alert-block" 
-		 when :notice 
+		when :notice 
 			css_class = "alert alert-success" 
-		 when :info 
+		when :info 
 			css_class = "alert alert-info"
+		when :alert 
+			css_class = "alert alert-block"
 	 end %>
 	<div class="<%= css_class %>">
 		<% unless flash[type].blank? %>

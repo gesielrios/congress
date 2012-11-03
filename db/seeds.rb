@@ -9,3 +9,8 @@
 Status.create(:description => "Em analise")
 Status.create(:description => "Aceito")
 Status.create(:description => "Recusado")
+
+User.create(:name => "Congresso FAESF ADMIN", 
+            :email => "congressofaesf@gmail.com",
+            :password => "congressofaesf2012",
+            :password_confirmation => "congressofaesf2012")

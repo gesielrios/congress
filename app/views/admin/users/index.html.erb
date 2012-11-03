@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h2>Usuários</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th width="45%">Nome</th>
+      <th width="35%">Email</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <%= link_to "Visualizar",
+                      admin_user_path(user), :class => 'btn btn-mini btn-primary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @users, :renderer => BootstrapPagination::Rails %>
+
+<%= link_to "Novo Usuário",
+            new_admin_user_path,
+            :class => 'btn btn-primary' %>

@@ -1,0 +1,38 @@
+<div class="page-header">
+	<h2>Login</h2>
+</div>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+	<div class="control-group">
+		<%= f.label :email, :class => "control-label" %>
+		<div class="controls">
+			<%= f.email_field :email, :required => "required" %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :password, :class => "control-label" %>
+		<div class="controls">
+			<%= f.password_field :password, :required => "required" %>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<div class="controls">
+			<% if devise_mapping.rememberable? -%>
+				<label class="checkbox">
+					<%= f.check_box :remember_me %> Continuar conectado
+				</label>
+			<% end -%>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<%= link_to "Não consegue acessar a sua conta?", new_password_path(resource_name), :class => "btn-link" %>
+		</div>
+	</div>
+	
+	<div class="form-actions">
+		<%= f.submit "Entrar",  :class => "btn btn-primary" %>
+		<%= link_to t('.cancel', :default => t("cancel")), root_path, :class => 'btn' %>
+	</div>
+<% end %>

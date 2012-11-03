@@ -1,6 +1,5 @@
 class PaperSubmissionsController < ApplicationController
-  # GET /paper_submissions
-  # GET /paper_submissions.json
+  
   def index
     @paper_submission = PaperSubmission.find_by_token(params[:token])
     
@@ -14,17 +13,10 @@ class PaperSubmissionsController < ApplicationController
     end
   end
 
-  # GET /paper_submissions/new
-  # GET /paper_submissions/new.json
   def new
     @paper_submission = PaperSubmission.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
-  # GET /paper_submissions/1/edit
   def edit
     @paper_submission = PaperSubmission.find_by_token(params[:token])
     respond_to do |format|
@@ -37,8 +29,6 @@ class PaperSubmissionsController < ApplicationController
     end
   end
 
-  # POST /paper_submissions
-  # POST /paper_submissions.json
   def create
     @paper_submission = PaperSubmission.new(params[:paper_submission])
 
@@ -52,8 +42,6 @@ class PaperSubmissionsController < ApplicationController
     end
   end
 
-  # PUT /paper_submissions/1
-  # PUT /paper_submissions/1.json
   def update
     @paper_submission = PaperSubmission.find(params[:id])
 

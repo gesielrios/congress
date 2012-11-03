@@ -1,5 +1,5 @@
 class PaperSubmission < ActiveRecord::Base
-  attr_accessible :email, :name, :title, :token, :paper
+  attr_accessible :email, :name, :title, :token, :paper, :status_id
   belongs_to :status
   
   has_attached_file :paper
@@ -34,5 +34,7 @@ class PaperSubmission < ActiveRecord::Base
   def add_status
     self.status_id = Status.find_by_description("Em analise")
   end
+  
+  self.per_page = 20
    
 end

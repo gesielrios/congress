@@ -1,4 +1,4 @@
-Congress::Application.routes.draw do
+  Congress::Application.routes.draw do
 
   resources :paper_submissions
   resources :contacts
@@ -12,9 +12,22 @@ Congress::Application.routes.draw do
   match "ecc" => "main#ecc", :via => :get
   match "jcc" => "main#jcc", :via => :get
   match "institutional" => "main#institutional", :via => :get
-  
-  
   match 'paper_submissions/edit/:token' => "paper_submissions#edit", :as => :edit_paper_submission
+  
+  scope '/admin' do
+    devise_for :users, :controllers => {
+      :sessions => "admin/sessions",
+      :passwords => "admin/passwords"
+    }
+  end
+  
+  namespace :admin do
+    root :to => 'home#index'
+    
+    resources :users, :except => [:edit, :update, :delete]
+    resources :paper_submissions, :except => [:new, :create, :delete]
+    resources :contacts, :except => [:new, :create, :edit, :update]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

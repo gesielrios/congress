@@ -1,0 +1,27 @@
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => model_class.model_name.human %></h2>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @contact.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @contact.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:subject) %>:</strong></dt>
+  <dd><%= @contact.subject %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:menssage) %>:</strong></dt>
+  <dd><%= @contact.menssage %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_at) %>:</strong></dt>
+  <dd><%=l @contact.created_at, :format => "%d/%m/%Y" %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to "Voltar",
+              admin_contacts_path, :class => 'btn'  %>
+  <%= link_to "Apagar",
+              admin_contact_path(@contact),
+              :method => 'delete',
+              :data => { :confirm => 'Deseja realmente apagar ?' },
+              :class => 'btn btn-danger' %>
+</div>
