@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   validates_uniqueness_of :name
 
-  self.per_page = 20
+  self.per_page = 10
 end

@@ -60,11 +60,11 @@
 		</div>
 
 		<div class="row">
-			<div class="span8">
+			<div class="span9">
 				<%= flash_messages %>
 				<%= yield %>
 	        </div>
-			<div class="span4">
+			<div class="span3">
 				<div>
 					<h3>Realização</h3>
 					<%= image_tag "logo_faesf.png" %>
@@ -74,19 +74,16 @@
  					<%= link_to image_tag("ubuntu-logo.png"), "http://ubuntuma.wordpress.com/", :target => "_blank" %>
 				</div>
 	        </div>
-	      </div>
+		</div>
 
-	      <hr>
+		<hr>
 
-	      <footer>
-	        <p>Copyright &copy; 2012 Todos os direitos reservados.</p>
+		<footer>
+			<p>Copyright &copy; 2012 Todos os direitos reservados.</p>
 			<p>Desenvolvido por:<strong> Gesiel Rios Lopes </strong></p>
-	      </footer>
-
-	    </div>
-
-
-    </div> <!-- /container -->
+		</footer>
+		
+	</div> <!-- /container -->
     <%= javascript_include_tag "application" %>
   </body>
 </html>

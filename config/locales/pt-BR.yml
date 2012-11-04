@@ -223,6 +223,7 @@ pt-BR:
         email: "Email Autor Principal"
         title: "Título"
         paper: "Arquivo"
+        created_at: "Data de envio"
 
   empty: "Não temos nenhum %{model} ainda."
   confirm: "Tem certeza?"

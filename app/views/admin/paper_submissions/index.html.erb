@@ -6,11 +6,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th width="35%">Título</th>
-      <th width="10%">Autor Principal</th>
+      <th width="30%">Título</th>
+      <th width="20%">Autor Principal</th>
       <th width="10%">Email</th>
-      <th>Status</th>
-      <th>Ações</th>
+      <th width="10%">Status</th>
+      <th width="10%">Resumo</th>
+      <th width="20%">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +21,10 @@
         <td><%= paper_submission.name %></td>
         <td><%= paper_submission.email %></td>
         <td><%= paper_submission.status.description if paper_submission.status %></td>
-        <td>
+		<td>
+			<%= link_to image_tag("icn_pdf.gif"), paper_submission.paper.url, :target => "_blank" %>        
+		</td>
+		<td>
           <%= link_to "Visualizar",
                       admin_paper_submission_path(paper_submission), :class => 'btn btn-mini btn-primary' %>
 		  <%= link_to "Editar",

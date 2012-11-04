@@ -1,5 +1,5 @@
 class PaperSubmissionMailer < ActionMailer::Base
-  default from: "gesielrios@gmail.com", :content_type => "text/html"
+  default from: "congressofaesf@gmail.com", :content_type => "text/html"
   
   def send_confimation_paper_submission(paper_submission)
     @paper_submission = paper_submission
