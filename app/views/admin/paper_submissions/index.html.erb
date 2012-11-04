@@ -25,12 +25,6 @@
 						admin_paper_submission_path(paper_submission), :class => 'btn btn-mini btn-primary' %>
 			<%= link_to "Editar",
 						edit_admin_paper_submission_path(paper_submission), :class => 'btn btn-mini' %>
-		 	<%= link_to "Apagar",
-						admin_paper_submission_path(paper_submission),
-			                      :method => :delete,
-			                      :data => { :confirm => 'Deseja realmente apagar ?'},
-			                      :class => 'btn btn-mini btn-danger' %>
-          
         </td>
       </tr>
     <% end %>

@@ -26,13 +26,13 @@ class Admin::PaperSubmissionsController < Admin::AdminController
     end
   end
   
-  def destroy
-    @paper_submission = PaperSubmission.find(params[:id])
-    @paper_submission.destroy
+  #def destroy
+    #@paper_submission = PaperSubmission.find(params[:id])
+    #@paper_submission.destroy
 
-    respond_to do |format|
-      format.html { redirect_to admin_paper_submissions_path, notice: 'Submissao apagada com sucesso.' }
-    end
-  end
+    #respond_to do |format|
+     # format.html { redirect_to admin_paper_submissions_path, notice: 'Submissao apagada com sucesso.' }
+    #end
+  #end
   
 end
