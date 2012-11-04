@@ -2,7 +2,8 @@ class PaperSubmission < ActiveRecord::Base
   attr_accessible :email, :name, :title, :token, :paper, :status_id
   belongs_to :status
   
-  has_attached_file :paper
+  has_attached_file :paper, :storage => :Dropboxstorage,
+                    :path => "/:attachment/:id/:style/:filename"
   
   validates_presence_of :email, :title, :name
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
