@@ -11,6 +11,7 @@
   match "program" => "main#program", :via => :get
   match "ecc" => "main#ecc", :via => :get
   match "jcc" => "main#jcc", :via => :get
+  match "prices" => "main#prices", :via => :get
   match "institutional" => "main#institutional", :via => :get
   match 'paper_submissions/edit/:token' => "paper_submissions#edit", :as => :edit_paper_submission
   
