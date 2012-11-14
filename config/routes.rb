@@ -14,6 +14,7 @@
   match "prices" => "main#prices", :via => :get
   match "institutional" => "main#institutional", :via => :get
   match "cultural" => "main#cultural", :via => :get
+  match "sustainable_mobility" => "main#sustainable_mobility", :via => :get
   match 'paper_submissions/edit/:token' => "paper_submissions#edit", :as => :edit_paper_submission
   
   scope '/admin' do
