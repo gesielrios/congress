@@ -25,7 +25,7 @@ class PaperSubmission < ActiveRecord::Base
   self.per_page = 10
   
   def deadline
-    errors.add(:created_at, "Fora do prazo de envio do resumo.") unless Date.today < Date.new(2012,11,15)
+    errors.add(:created_at, "Fora do prazo de envio do resumo.") unless Date.today < Date.new(2012,11,17)
   end
 
   def attachment_content_type
