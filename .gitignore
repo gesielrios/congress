@@ -16,3 +16,5 @@
 
 #Ignore all paperclip files
 /public/system
+
+.DS_Store
