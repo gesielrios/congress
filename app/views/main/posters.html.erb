@@ -1,0 +1,35 @@
+<div id="program">
+	<h3>FACULDADE DE EDUCAÇÃO SÃO FRANCISCO</h3>
+	<h4>DIRETORIA ACADÊMICA<br/>
+	COORDENADORIA DE PESQUISA, EXTENSÃO E PÓS-GRADUAÇÃO<br/>
+	VIII CONGRESSO FAESF<br/>
+	Desenvolvimento regional: sustentabilidade e inclusão social<br/>
+	21 a 23 de Novembro de 2012</h4>
+	<h3>Lista de Resumos Aceitos - VIII Congresso da FAESF</h3>
+	<h3>APRESENTAÇÃO EM PÔSTER</h3>
+	
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th width="30%">Autor Principal</th>
+	      <th width="50%">Título</th>
+	      <th width="10%">Data</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @paper_submissions.each_with_index do |paper_submission, count| %>
+			<% @day = @day + 1 if count != 0 && (count % 7 == 0) %>
+	      <tr>
+	        <td><%= paper_submission.name %></td>
+	        <td><%= paper_submission.title %></td>
+			<td>
+				<%=l Date.new(2012,11,@day), :format => "%d/%m/%Y"%>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	
+
+
+</div>

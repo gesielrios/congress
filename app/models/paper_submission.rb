@@ -8,7 +8,7 @@ class PaperSubmission < ActiveRecord::Base
   validates_presence_of :email, :title, :name
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   validates_uniqueness_of :token, :title
-  validate :attachment_content_type, :deadline
+  validate :attachment_content_type, :deadline, :on => :create
   
   after_validation :generate_token, :add_status, :on => :create
   

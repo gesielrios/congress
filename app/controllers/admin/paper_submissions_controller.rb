@@ -19,6 +19,7 @@ class Admin::PaperSubmissionsController < Admin::AdminController
 
     respond_to do |format|
       if @paper_submission.update_attributes(params[:paper_submission])
+        PaperSubmissionMailer.send_accept_paper_submission(@paper_submission).deliver if @paper_submission.status and @paper_submission.status.description == "Aceito"
         format.html { redirect_to admin_paper_submissions_path, notice: 'Submissao atualizada com sucesso.' }
       else
         format.html { render action: "edit" }

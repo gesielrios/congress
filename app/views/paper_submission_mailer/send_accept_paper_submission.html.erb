@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>VIII Congresso FAESF</h1>
+			<h2>Desenvolvimento Regional:</h2>
+			<h3>Sustentabilidade e Inclusão Social</h3>
+			<h3>21 a 23 de Novembro de 2012</h3>
+		</div>
+		<div class="row">
+			<h2>Resumo Aceito nos Anais do VIII Congresso da FAESF</h2>
+			<p>
+				Prezado(a) <%= @paper_submission.name %>,
+			</p>
+			<p>
+				É com grande satisfação que comunicamos a aceitação do seu resumo 
+				intitulado <strong><%= @paper_submission.title %></strong>.
+			</p>
+			<p>
+				Na oportunidade comunicamos que o mesmo será publicado nos 
+				anais do VIII Congresso da Faculdade de Educação São Francisco.
+			</p>
+			<p>
+				Vale ressaltar que a data e o horário da apresentação do seu resumo,
+				encontra-se publicado no endereço eletrônico do evento 
+				(<%= link_to "www.congressofaesf.com.br/posters", posters_path, :class => "btn-link" %>).
+			</p>	
+			<p>
+				Cordialmente,
+			</p>
+			<p>
+				Gesiel Rios Lopes, M.Sc. <br/>
+				Livênia Norberta, M.Sc. <br/>
+				Patrícia Fernanda Marques, M.Sc.<br/>
+				Comitê Científico do VIII Congresso da FAESF.
+			</p>
+		</div>
+	</div>
+  </body>
+</html>
+
