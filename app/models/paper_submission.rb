@@ -12,6 +12,8 @@ class PaperSubmission < ActiveRecord::Base
   
   after_validation :generate_token, :add_status, :on => :create
   
+  scope :accepts, joins(:status).where("statuses.description" => "Aceito")
+  
   #Paperclip Custon Validations
   VALID_CONTENT_TYPES = ["application/zip", "application/x-zip", "application/x-zip-compressed", "application/pdf", "application/x-pdf"]
   
