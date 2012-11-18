@@ -1,7 +1,7 @@
 class MainController < ApplicationController
   
   def posters
-    @day = 23
+    @day = 21
     @paper_submissions = PaperSubmission.all
   end
   
